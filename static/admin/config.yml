@@ -2,8 +2,7 @@ backend:
   name: github
   repo: ittitks30-stack/hakoblog-site
   branch: main
-  auth_type: pkce
-  app_id: Ov23liX3osQa91lnikEQ
+  base_url: https://hakoblog-oauth.ittitks30.workers.dev
 
 locale: ja
 media_folder: static/images
