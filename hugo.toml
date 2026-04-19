@@ -1,0 +1,36 @@
+baseURL = "https://tenshoku-labo.com/"
+languageCode = "ja"
+title = "テンショク・ラボ"
+theme = "PaperMod"
+hasCJKLanguage = true
+enableRobotsTXT = true
+buildDrafts = false
+paginate = 10
+
+[params]
+  description = "転職エージェント徹底比較・活用ガイド"
+  author = "テンショク・ラボ編集部"
+  defaultTheme = "light"
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+  TocOpen = false
+
+[params.homeInfoParams]
+  Title = "転職エージェント完全ガイド"
+  Content = "転職エージェントの選び方・使い方・比較をわかりやすく解説します。"
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
