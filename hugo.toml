@@ -5,6 +5,7 @@ theme = "PaperMod"
 hasCJKLanguage = true
 enableRobotsTXT = true
 buildDrafts = false
+buildFuture = true
 paginate = 10
 
 [params]
