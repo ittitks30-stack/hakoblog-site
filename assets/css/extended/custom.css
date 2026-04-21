@@ -100,6 +100,293 @@
 }
 
 /* =========================================
+   転職エージェント比較カード (.agent-card)
+   Claude Design 由来 / BEM記法
+   ========================================= */
+.agent-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin: 28px 0;
+}
+
+.agent-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid #e4e7eb;
+  border-radius: 12px;
+  padding: 24px 22px 22px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  transition: transform 0.15s, box-shadow 0.15s;
+  display: flex;
+  flex-direction: column;
+}
+
+.agent-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(45, 106, 79, 0.12);
+}
+
+.agent-card__badge {
+  position: absolute;
+  top: -12px;
+  left: 16px;
+  background: #ff6b35;
+  color: #fff;
+  font-size: 0.82em;
+  font-weight: bold;
+  padding: 4px 12px;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+}
+
+.agent-card__header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 10px;
+}
+
+.agent-card__logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  object-fit: contain;
+  background: #f1f3f5;
+  flex-shrink: 0;
+}
+
+.agent-card__logo--text {
+  background: #2d6a4f;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.02em;
+}
+
+.agent-card__title {
+  margin: 0;
+  font-size: 1.08em;
+  line-height: 1.3;
+  color: #1b4332;
+}
+
+.agent-card__rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  font-size: 0.92em;
+}
+
+.agent-card__stars {
+  color: #ffb400;
+  letter-spacing: 0.04em;
+}
+
+.agent-card__rating-num {
+  color: #495057;
+  font-weight: bold;
+}
+
+.agent-card__tag {
+  display: inline-block;
+  background: #e8f5ef;
+  color: #2d6a4f;
+  font-size: 0.85em;
+  font-weight: bold;
+  padding: 4px 12px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  align-self: flex-start;
+}
+
+.agent-card__jobs {
+  margin: 6px 0 10px;
+  color: #495057;
+  font-size: 0.95em;
+}
+
+.agent-card__points {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 14px;
+}
+
+.agent-card__points li {
+  position: relative;
+  padding: 4px 0 4px 22px;
+  font-size: 0.95em;
+  color: #343a40;
+}
+
+.agent-card__points li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  color: #2d6a4f;
+  font-weight: bold;
+}
+
+.agent-card__body {
+  background: #f8f9fa;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 0.92em;
+  color: #495057;
+  margin: 0 0 16px;
+  line-height: 1.6;
+}
+
+.agent-card__cta {
+  display: block;
+  background: #ff6b35;
+  color: #fff !important;
+  text-align: center;
+  padding: 13px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none !important;
+  margin-top: auto;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.agent-card__cta:hover {
+  background: #e85a24;
+  transform: translateY(-1px);
+}
+
+/* =========================================
+   記事末尾CTA (.cta-block)
+   ========================================= */
+.cta-block {
+  margin: 40px 0 24px;
+  padding: 2px;
+  background: linear-gradient(135deg, #2d6a4f 0%, #1b4332 100%);
+  border-radius: 14px;
+}
+
+.cta-block__inner {
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px 24px;
+  text-align: center;
+}
+
+.cta-block__title {
+  margin: 0 0 8px;
+  font-size: 1.25em;
+  color: #1b4332;
+  line-height: 1.4;
+}
+
+.cta-block__sub {
+  margin: 0 0 18px;
+  color: #495057;
+  font-size: 0.98em;
+}
+
+.cta-block__body {
+  margin: 0 0 18px;
+  color: #495057;
+  font-size: 0.95em;
+  text-align: left;
+}
+
+.cta-block__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.cta-block__btn {
+  display: block;
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none !important;
+  font-size: 1.02em;
+  transition: transform 0.1s, box-shadow 0.15s;
+}
+
+.cta-block__btn--main {
+  background: #ff6b35;
+  color: #fff !important;
+  box-shadow: 0 3px 10px rgba(255, 107, 53, 0.3);
+}
+
+.cta-block__btn--main:hover {
+  background: #e85a24;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 14px rgba(255, 107, 53, 0.4);
+}
+
+.cta-block__btn--sub {
+  background: #fff;
+  color: #2d6a4f !important;
+  border: 2px solid #2d6a4f;
+}
+
+.cta-block__btn--sub:hover {
+  background: #e8f5ef;
+}
+
+.cta-block__badges {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 18px;
+  font-size: 0.88em;
+  color: #495057;
+}
+
+.cta-block__badges li {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.cta-block__badge-mark {
+  color: #2d6a4f;
+  font-weight: bold;
+}
+
+.cta-block--compact {
+  background: none;
+  padding: 0;
+}
+
+.cta-block--compact .cta-block__inner {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  padding: 20px 18px;
+}
+
+.cta-block--compact .cta-block__title {
+  font-size: 1.08em;
+}
+
+/* PC表示: CTA2ボタンを横並び */
+@media (min-width: 640px) {
+  .cta-block__buttons {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .cta-block__btn {
+    flex: 1;
+    max-width: 320px;
+  }
+}
+
+/* =========================================
    モバイル対応
    ========================================= */
 @media (max-width: 640px) {
@@ -120,5 +407,18 @@
   .post-content table th,
   .post-content table td {
     padding: 7px 8px;
+  }
+
+  .agent-card-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .cta-block__inner {
+    padding: 22px 18px;
+  }
+
+  .cta-block__title {
+    font-size: 1.12em;
   }
 }

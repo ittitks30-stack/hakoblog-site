@@ -1,0 +1,55 @@
+{{- /*
+  記事末尾の強力CTAブロック
+  使い方:
+    {{< cta-block
+        title="気になったエージェントに今すぐ登録"
+        sub="登録は5分・完全無料・年収アップの第一歩"
+        main-label="リクルートエージェントに無料登録"
+        main-url="https://example.com/ra"
+        sub-label="dodaで求人を見る"
+        sub-url="https://example.com/doda"
+        badges="完全無料|登録5分|非公開求人あり" >}}
+    補足テキストがあればここに書く（省略可）。
+    {{< /cta-block >}}
+
+  compactパラメータを指定するとコンパクト版:
+    {{< cta-block compact="true" main-label="無料相談する" main-url="..." >}}{{< /cta-block >}}
+*/ -}}
+{{- $compact    := eq (.Get "compact" | default "false") "true" -}}
+{{- $title      := .Get "title"      | default "まずは無料で相談してみませんか？" -}}
+{{- $sub        := .Get "sub"        | default "登録は5分・完全無料・あなたのキャリアを一歩前へ" -}}
+{{- $mainLabel  := .Get "main-label" | default "無料で登録する" -}}
+{{- $mainUrl    := .Get "main-url"   | default "#" -}}
+{{- $subLabel   := .Get "sub-label"  | default "" -}}
+{{- $subUrl     := .Get "sub-url"    | default "" -}}
+{{- $badges     := split (.Get "badges" | default "完全無料|登録5分|非公開求人あり") "|" -}}
+{{- $rel        := .Get "nofollow" | default "sponsored nofollow noopener" -}}
+
+<aside class="cta-block{{ if $compact }} cta-block--compact{{ end }}">
+  <div class="cta-block__inner">
+    <h3 class="cta-block__title">{{ $title }}</h3>
+    {{- if $sub }}
+    <p class="cta-block__sub">{{ $sub }}</p>
+    {{- end }}
+
+    {{- $inner := .Inner | markdownify -}}
+    {{- if $inner }}
+    <div class="cta-block__body">{{ $inner }}</div>
+    {{- end }}
+
+    <div class="cta-block__buttons">
+      <a class="cta-block__btn cta-block__btn--main" href="{{ $mainUrl }}" target="_blank" rel="{{ $rel }}">{{ $mainLabel }} →</a>
+      {{- if and $subLabel $subUrl }}
+      <a class="cta-block__btn cta-block__btn--sub" href="{{ $subUrl }}" target="_blank" rel="{{ $rel }}">{{ $subLabel }}</a>
+      {{- end }}
+    </div>
+
+    {{- if and (not $compact) $badges }}
+    <ul class="cta-block__badges">
+      {{- range $badges }}{{ if . }}
+      <li><span class="cta-block__badge-mark" aria-hidden="true">✓</span>{{ . }}</li>
+      {{- end }}{{ end }}
+    </ul>
+    {{- end }}
+  </div>
+</aside>

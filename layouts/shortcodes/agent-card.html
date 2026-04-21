@@ -1,0 +1,70 @@
+{{- /*
+  転職エージェント比較カード
+  使い方（単体）:
+    {{< agent-card name="リクルートエージェント" short="RA" rating="4.8" badge="編集部イチオシ" tag="求人数No.1" jobs="約60万件" url="https://example.com/ra" points="非公開求人が全体の約80%|各業界に精通した専任アドバイザー|全国47都道府県・海外対応" body="転職初心者〜経験者まで幅広くおすすめ。" >}}
+
+  複数枚を横並びにする場合は <div class="agent-card-grid"> でラップする:
+    <div class="agent-card-grid">
+    {{< agent-card ... >}}
+    {{< agent-card ... >}}
+    </div>
+*/ -}}
+{{- $name   := .Get "name" -}}
+{{- $short  := .Get "short" | default "" -}}
+{{- $logo   := .Get "logo" | default "" -}}
+{{- $rating := .Get "rating" | default "" -}}
+{{- $badge  := .Get "badge" | default "" -}}
+{{- $tag    := .Get "tag" | default "" -}}
+{{- $jobs   := .Get "jobs" | default "" -}}
+{{- $url    := .Get "url" | default "#" -}}
+{{- $cta    := .Get "cta" | default "無料で登録する" -}}
+{{- $points := split (.Get "points" | default "") "|" -}}
+{{- $body   := .Get "body" | default "" -}}
+{{- $rel    := .Get "nofollow" | default "sponsored nofollow noopener" -}}
+
+<div class="agent-card">
+  {{- if $badge }}
+  <div class="agent-card__badge">{{ $badge }}</div>
+  {{- end }}
+  <div class="agent-card__header">
+    {{- if $logo }}
+    <img class="agent-card__logo" src="{{ $logo }}" alt="{{ $name }}ロゴ" loading="lazy">
+    {{- else }}
+    <div class="agent-card__logo agent-card__logo--text">{{ $short | default (substr $name 0 2) }}</div>
+    {{- end }}
+    <div class="agent-card__head-text">
+      <h3 class="agent-card__title">{{ $name }}</h3>
+      {{- if $rating }}
+      <div class="agent-card__rating">
+        <span class="agent-card__stars" aria-label="評価 {{ $rating }} / 5">
+          {{- $r := float $rating -}}
+          {{- range seq 5 }}{{ if le (float .) $r }}★{{ else }}☆{{ end }}{{ end -}}
+        </span>
+        <span class="agent-card__rating-num">{{ $rating }}</span>
+      </div>
+      {{- end }}
+    </div>
+  </div>
+
+  {{- if $tag }}
+  <div class="agent-card__tag">{{ $tag }}</div>
+  {{- end }}
+
+  {{- if $jobs }}
+  <p class="agent-card__jobs">求人件数：<strong>{{ $jobs }}</strong></p>
+  {{- end }}
+
+  {{- if $points }}
+  <ul class="agent-card__points">
+    {{- range $points }}{{ if . }}
+    <li>{{ . }}</li>
+    {{- end }}{{ end }}
+  </ul>
+  {{- end }}
+
+  {{- if $body }}
+  <p class="agent-card__body">{{ $body }}</p>
+  {{- end }}
+
+  <a class="agent-card__cta" href="{{ $url }}" target="_blank" rel="{{ $rel }}">{{ $cta }} →</a>
+</div>
