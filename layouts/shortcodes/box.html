@@ -1,0 +1,23 @@
+{{- $color := .Get "color" | default "blue" -}}
+{{- $title := .Get "title" | default "" -}}
+
+{{- $styles := dict
+  "green"  (dict "bg" "#d4edda" "border" "#c3e6cb" "text" "#155724")
+  "blue"   (dict "bg" "#d1ecf1" "border" "#bee5eb" "text" "#0c5460")
+  "gray"   (dict "bg" "#f8f9fa" "border" "#dee2e6" "text" "#383d41")
+  "yellow" (dict "bg" "#fff3cd" "border" "#ffeeba" "text" "#856404")
+  "red"    (dict "bg" "#f8d7da" "border" "#f5c6cb" "text" "#721c24")
+  "cyan"   (dict "bg" "#e8f4f8" "border" "#b8d4e3" "text" "#1a5276")
+  "cream"  (dict "bg" "#fef9e7" "border" "#f9e79f" "text" "#7d6608")
+-}}
+
+{{- $s := index $styles $color | default (index $styles "blue") -}}
+
+<div style="background:{{ $s.bg }};border:1px solid {{ $s.border }};border-radius:8px;padding:20px 24px;margin:16px 0">
+{{- if $title }}
+<p style="color:{{ $s.text }};font-weight:bold;margin:0 0 10px 0;font-size:1.05rem">{{ $title }}</p>
+{{- end }}
+<div style="color:{{ $s.text }}">
+{{ .Inner | markdownify }}
+</div>
+</div>
