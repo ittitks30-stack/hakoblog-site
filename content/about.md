@@ -15,7 +15,7 @@ ShowReadingTime: false
 | サイト名 | テンショク・ラボ |
 | URL | https://tenshokulabo.work |
 | 運営開始 | 2026年3月 |
-| 運営者 | テンショク・ラボ編集部 |
+| 運営者 | itti |
 | お問い合わせ | [お問い合わせフォーム](/contact/) |
 
 ## サイトの目的
