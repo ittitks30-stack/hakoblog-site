@@ -35,3 +35,33 @@ paginate = 10
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+
+[[menu.main]]
+  identifier = "posts"
+  name = "記事一覧"
+  url = "/posts/"
+  weight = 10
+
+[[menu.main]]
+  identifier = "categories"
+  name = "カテゴリ"
+  url = "/categories/"
+  weight = 20
+
+[[menu.main]]
+  identifier = "about"
+  name = "運営者情報"
+  url = "/about/"
+  weight = 90
+
+[[menu.main]]
+  identifier = "contact"
+  name = "お問い合わせ"
+  url = "/contact/"
+  weight = 95
+
+[[menu.main]]
+  identifier = "privacy"
+  name = "プライバシー"
+  url = "/privacy/"
+  weight = 99
