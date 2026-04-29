@@ -25,13 +25,13 @@ categories:
 
 {{< agent-card name="doda（デューダ）" short="do" rating="4.6"
     tag="スカウト機能◎" jobs="約25万件"
-    url="https://example.com/doda"
+    url="https://doda.jp/"
     points="スカウトメール数が業界最多水準|エージェントサービス＋求人サイトの両機能|年収査定などの診断ツールが充実"
     body="自分で探しつつ、エージェントにも相談したい人に最適。" >}}
 
 {{< agent-card name="マイナビエージェント" short="MA" rating="4.4"
     tag="20代に強い" jobs="約6万件"
-    url="https://example.com/mynavi"
+    url="https://mynavi-agent.jp/"
     points="20〜30代の若手転職に特化|中小優良企業の求人多数|書類添削・面接対策が丁寧"
     body="はじめての転職で手厚いサポートを受けたい人向け。" >}}
 
@@ -77,7 +77,7 @@ categories:
     main-label="リクルートエージェントに無料登録"
     main-url="https://example.com/recruit"
     sub-label="dodaで求人を見る"
-    sub-url="https://example.com/doda"
+    sub-url="https://doda.jp/"
     badges="完全無料|登録5分|非公開求人あり|24時間対応" >}}
 迷ったらまずは**大手2社**に登録してみるのがおすすめ。合わなければ退会も簡単です。
 {{< /cta-block >}}
