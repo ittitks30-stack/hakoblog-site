@@ -4,3 +4,15 @@
 <!-- Cloudflare Web Analytics -->
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "27690d8d4c7c4e588de1cd4f30a3eab2"}'></script>
 <!-- End Cloudflare Web Analytics -->
+
+<!-- レイアウト幅拡大（PaperModデフォルト720px → 1100px） -->
+<style>
+  :root {
+    --main-width: 1100px;
+  }
+  /* ヘッダーとフッターも合わせて拡大 */
+  .header { max-width: 1100px; }
+  /* 記事ページの本文は読みやすさ優先で少し狭めに */
+  .post-content { max-width: 820px; margin-left: auto; margin-right: auto; }
+  .post-header { max-width: 820px; margin-left: auto; margin-right: auto; }
+</style>
