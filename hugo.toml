@@ -20,6 +20,9 @@ paginate = 10
   ShowToc = true
   TocOpen = false
 
+[params.footer]
+  text = "Hero photo by [Vitaly Gariev](https://unsplash.com/@silverkblack) on [Unsplash](https://unsplash.com/)"
+
 [params.homeInfoParams]
   Title = "転職エージェント完全ガイド"
   Content = "転職エージェントの選び方・使い方・比較をわかりやすく解説します。"
