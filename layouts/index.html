@@ -51,45 +51,105 @@
 </section>
 
 <!-- ========================================== -->
-<!-- 最新記事リスト（横長カード）                 -->
+<!-- メイン + サイドバー 2カラム                  -->
 <!-- ========================================== -->
-<section class="latest-section">
-  <h2 class="section-title">新着記事</h2>
-  <div class="post-list">
-    {{ $posts := where site.RegularPages "Type" "posts" }}
-    {{ range first 8 $posts }}
-    <a class="post-row" href="{{ .Permalink }}">
-      {{ with .Params.cover }}
-      <div class="post-thumb" style="background-image: url('{{ .image }}');"></div>
-      {{ else }}
-      <div class="post-thumb post-thumb-default">📝</div>
-      {{ end }}
-      <div class="post-meta">
-        {{ with .Params.categories }}
-        <div class="post-tags">
-          {{ range first 4 . }}
-          {{ if ne . "転職エージェント" }}
-          <span class="post-tag">{{ . }}</span>
+<div class="layout-wrapper">
+
+  <!-- ========== メインカラム ========== -->
+  <main class="main-column">
+    <section class="latest-section">
+      <h2 class="section-title">新着記事</h2>
+      <div class="post-list">
+        {{ $posts := where site.RegularPages "Type" "posts" }}
+        {{ range first 8 $posts }}
+        <a class="post-row" href="{{ .Permalink }}">
+          {{ with .Params.cover }}
+          <div class="post-thumb" style="background-image: url('{{ .image }}');"></div>
+          {{ else }}
+          <div class="post-thumb post-thumb-default">📝</div>
           {{ end }}
-          {{ end }}
-        </div>
+          <div class="post-meta">
+            {{ with .Params.categories }}
+            <div class="post-tags">
+              {{ range first 4 . }}
+              {{ if ne . "転職エージェント" }}
+              <span class="post-tag">{{ . }}</span>
+              {{ end }}
+              {{ end }}
+            </div>
+            {{ end }}
+            <h3 class="post-row-title">{{ .Title }}</h3>
+            {{ with .Params.description }}
+            <p class="post-desc">{{ . }}</p>
+            {{ end }}
+            <div class="post-footer">
+              <span class="post-row-date">{{ .Date.Format "2006年1月2日" }}</span>
+              <span class="post-author">📝 テンショク・ラボ</span>
+            </div>
+          </div>
+        </a>
         {{ end }}
-        <h3 class="post-row-title">{{ .Title }}</h3>
-        {{ with .Params.description }}
-        <p class="post-desc">{{ . }}</p>
-        {{ end }}
-        <div class="post-footer">
-          <span class="post-row-date">{{ .Date.Format "2006年1月2日" }}</span>
-          <span class="post-author">📝 テンショク・ラボ</span>
-        </div>
       </div>
-    </a>
-    {{ end }}
-  </div>
-  <div class="more-link">
-    <a href="/posts/" class="more-btn">すべての記事を見る →</a>
-  </div>
-</section>
+      <div class="more-link">
+        <a href="/posts/" class="more-btn">すべての記事を見る →</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== サイドバー ========== -->
+  <aside class="sidebar">
+
+    <!-- ▼ 注目エージェント（CTA） -->
+    <div class="widget widget-cta">
+      <h3 class="widget-title">📢 編集部おすすめ</h3>
+      <a class="widget-cta-card" href="https://example.com/recruit-agent" target="_blank" rel="nofollow noopener">
+        <div class="widget-cta-name">リクルートエージェント</div>
+        <div class="widget-cta-desc">求人数No.1・全世代対応の定番</div>
+        <div class="widget-cta-btn">無料登録 →</div>
+      </a>
+      <a class="widget-cta-card widget-cta-card-2" href="https://example.com/bizreach" target="_blank" rel="nofollow noopener">
+        <div class="widget-cta-name">ビズリーチ</div>
+        <div class="widget-cta-desc">年収UPを狙うハイクラス向け</div>
+        <div class="widget-cta-btn">無料登録 →</div>
+      </a>
+    </div>
+
+    <!-- ▼ カテゴリ一覧 -->
+    <div class="widget">
+      <h3 class="widget-title">📂 カテゴリから探す</h3>
+      <ul class="widget-cat-list">
+        <li><a href="/categories/20代/">🌱 20代向け</a></li>
+        <li><a href="/categories/30代/">🚀 30代向け</a></li>
+        <li><a href="/categories/40代/">💼 40代向け</a></li>
+        <li><a href="/categories/女性/">🌸 女性の転職</a></li>
+        <li><a href="/categories/未経験/">✨ 未経験から</a></li>
+        <li><a href="/categories/ハイクラス/">👑 ハイクラス</a></li>
+      </ul>
+    </div>
+
+    <!-- ▼ 人気記事（暫定で最近の人気順） -->
+    <div class="widget">
+      <h3 class="widget-title">🔥 よく読まれている記事</h3>
+      <ol class="widget-pop-list">
+        {{ $popular := where site.RegularPages "Type" "posts" }}
+        {{ range first 5 $popular }}
+        <li>
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
+        </li>
+        {{ end }}
+      </ol>
+    </div>
+
+    <!-- ▼ プロフィール -->
+    <div class="widget widget-profile">
+      <div class="widget-profile-icon">📝</div>
+      <h3 class="widget-profile-name">テンショク・ラボ編集部</h3>
+      <p class="widget-profile-desc">転職エージェントの選び方・使い方を、実際の体験談と最新データに基づいて解説します。</p>
+    </div>
+
+  </aside>
+
+</div>
 
 <style>
   /* ======== ヒーロー ======== */
@@ -257,6 +317,139 @@
     color: #999;
   }
 
+  /* ======== 2カラムレイアウト ======== */
+  .layout-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 32px;
+    align-items: start;
+  }
+  .main-column { min-width: 0; }
+  .sidebar { display: flex; flex-direction: column; gap: 24px; }
+
+  /* ======== ウィジェット共通 ======== */
+  .widget {
+    background: #fff;
+    border-radius: 12px;
+    padding: 18px 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .widget-title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0 0 14px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #667eea;
+  }
+
+  /* ======== CTAウィジェット ======== */
+  .widget-cta-card {
+    display: block;
+    padding: 14px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);
+    transition: transform 0.2s;
+  }
+  .widget-cta-card-2 {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  }
+  .widget-cta-card:hover { transform: scale(1.02); }
+  .widget-cta-name { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+  .widget-cta-desc { font-size: 0.78rem; opacity: 0.95; margin-bottom: 10px; line-height: 1.5; }
+  .widget-cta-btn {
+    display: inline-block;
+    background: rgba(255,255,255,0.25);
+    padding: 5px 14px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+
+  /* ======== カテゴリリスト ======== */
+  .widget-cat-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .widget-cat-list li { border-bottom: 1px solid #f0f0f0; }
+  .widget-cat-list li:last-child { border-bottom: none; }
+  .widget-cat-list a {
+    display: block;
+    padding: 10px 4px;
+    color: #444;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s, padding 0.2s;
+  }
+  .widget-cat-list a:hover { color: #667eea; padding-left: 8px; }
+
+  /* ======== 人気記事 ======== */
+  .widget-pop-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: rank;
+  }
+  .widget-pop-list li {
+    counter-increment: rank;
+    position: relative;
+    padding: 8px 0 8px 32px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .widget-pop-list li:last-child { border-bottom: none; }
+  .widget-pop-list li::before {
+    content: counter(rank);
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 22px;
+    height: 22px;
+    background: #667eea;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 22px;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+  .widget-pop-list li:nth-child(1)::before { background: #ffd700; }
+  .widget-pop-list li:nth-child(2)::before { background: #c0c0c0; }
+  .widget-pop-list li:nth-child(3)::before { background: #cd7f32; }
+  .widget-pop-list a {
+    color: #444;
+    text-decoration: none;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .widget-pop-list a:hover { color: #667eea; }
+
+  /* ======== プロフィール ======== */
+  .widget-profile {
+    text-align: center;
+    background: linear-gradient(135deg, #f5f7ff 0%, #fff5f7 100%);
+  }
+  .widget-profile-icon {
+    font-size: 2.5rem;
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 10px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  .widget-profile-name { margin: 0 0 8px; font-size: 0.95rem; }
+  .widget-profile-desc { font-size: 0.8rem; color: #666; line-height: 1.6; margin: 0; }
+
   /* ======== もっと見るボタン ======== */
   .more-link {
     text-align: center;
@@ -288,6 +481,14 @@
   body.dark .post-desc { color: #bbb; }
   body.dark .post-footer { color: #aaa; }
   body.dark .post-tag { background: #4a4319; color: #ffeeba; }
+  body.dark .widget { background: #2a2a2a; color: #e0e0e0; }
+  body.dark .widget-cat-list a { color: #ddd; }
+  body.dark .widget-cat-list li { border-bottom-color: #3a3a3a; }
+  body.dark .widget-pop-list a { color: #ddd; }
+  body.dark .widget-pop-list li { border-bottom-color: #3a3a3a; }
+  body.dark .widget-profile { background: linear-gradient(135deg, #2a2a3a 0%, #3a2a3a 100%); }
+  body.dark .widget-profile-icon { background: #1a1a1a; }
+  body.dark .widget-profile-desc { color: #bbb; }
 
   /* ======== レスポンシブ ======== */
   @media (max-width: 768px) {
@@ -299,6 +500,7 @@
     .post-row { flex-direction: column; }
     .post-thumb { flex: 0 0 auto; width: 100%; }
     .post-row-title { font-size: 1rem; }
+    .layout-wrapper { grid-template-columns: 1fr; gap: 24px; }
   }
 </style>
 
