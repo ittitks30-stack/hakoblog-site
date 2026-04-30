@@ -5,8 +5,8 @@
 <!-- ========================================== -->
 <section class="hero">
   <div class="hero-inner">
-    <h1 class="hero-title">失敗しない転職エージェント選びの完全ガイド</h1>
-    <p class="hero-sub">あなたに合うサービスが見つかる。比較・体験談・活用術まで、転職成功への情報が全部ここに。</p>
+    <h1 class="hero-title">失敗しない転職エージェント選び<br>完全ガイド</h1>
+    <p class="hero-sub">あなたに合うサービスが見つかる。<br class="sp-only">比較・体験談・活用術まで、転職成功への情報が全部ここに。</p>
     <a class="hero-cta" href="/posts/">記事一覧を見る →</a>
   </div>
 </section>
@@ -156,21 +156,26 @@
   .hero {
     position: relative;
     background-image:
-      linear-gradient(135deg, rgba(102,126,234,0.55) 0%, rgba(118,75,162,0.55) 100%),
+      linear-gradient(135deg, rgba(102,126,234,0.5) 0%, rgba(118,75,162,0.5) 100%),
       url('/images/hero-bg.jpg?v=2');
     background-size: cover;
-    background-position: center 40%;
+    background-position: 30% center;
     color: #fff;
-    padding: 120px 20px 80px;
-    text-align: center;
+    padding: 50px 20px 50px 50%;
+    text-align: left;
     border-radius: 12px;
     margin-bottom: 50px;
     overflow: hidden;
+    min-height: 320px;
+    display: flex;
+    align-items: center;
   }
   .hero-inner {
     position: relative;
     z-index: 2;
+    width: 100%;
   }
+  .sp-only { display: none; }
   .hero-title {
     font-size: 2.2rem;
     font-weight: 800;
@@ -504,9 +509,15 @@
 
   /* ======== レスポンシブ ======== */
   @media (max-width: 768px) {
-    .hero { padding: 50px 16px; }
+    .hero {
+      padding: 200px 16px 30px;
+      text-align: center;
+      background-position: center 25%;
+      min-height: auto;
+    }
     .hero-title { font-size: 1.4rem; }
     .hero-sub { font-size: 0.9rem; }
+    .sp-only { display: inline; }
     .cat-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
     .cat-card { padding: 20px 12px; }
     .post-row { flex-direction: column; }
