@@ -21,7 +21,7 @@ paginate = 10
   TocOpen = false
 
 [params.footer]
-  text = "Hero photo by [Vitaly Gariev](https://unsplash.com/@silverkblack) on [Unsplash](https://unsplash.com/)"
+  text = "当サイトはアフィリエイトプログラムにより収益を得ています。"
 
 [params.homeInfoParams]
   Title = "転職エージェント完全ガイド"
