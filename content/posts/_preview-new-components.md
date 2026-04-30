@@ -4,7 +4,7 @@ date: "2026-04-21"
 draft: true
 description: "agent-card / cta-block / box shortcode の表示確認用ページ"
 categories:
-  - test
+  - 転職エージェント
 ---
 
 # 新UIコンポーネント検証ページ
