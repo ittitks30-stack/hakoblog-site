@@ -506,3 +506,75 @@
   .chat-avatar .chat-emoji { width: 52px; height: 52px; font-size: 28px; }
   .chat-bubble { padding: 12px 14px; max-width: calc(100% - 72px); }
 }
+
+/* =========================================
+   記事一覧ページ (/posts/, /categories/X/) の横長コンパクト化
+   ========================================= */
+main.main .post-entry {
+  display: grid !important;
+  grid-template-columns: 200px 1fr;
+  grid-template-areas:
+    "cover header"
+    "cover content"
+    "cover footer";
+  grid-template-rows: auto 1fr auto;
+  column-gap: 16px;
+  row-gap: 4px;
+  padding: 12px;
+  margin-bottom: 12px;
+  min-height: 0;
+}
+main.main .post-entry .entry-cover {
+  grid-area: cover;
+  margin: 0 !important;
+  height: 120px;
+  overflow: hidden;
+  border-radius: 8px;
+  align-self: center;
+}
+main.main .post-entry .entry-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+main.main .post-entry .entry-header {
+  grid-area: header;
+  margin: 0;
+  padding: 0;
+}
+main.main .post-entry .entry-header h2 {
+  font-size: 1.05rem;
+  line-height: 1.4;
+  margin: 0 0 4px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+main.main .post-entry .entry-content {
+  grid-area: content;
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+main.main .post-entry .entry-footer {
+  grid-area: footer;
+  margin-top: 6px;
+  font-size: 0.75rem;
+}
+
+@media (max-width: 600px) {
+  main.main .post-entry {
+    grid-template-columns: 110px 1fr;
+    column-gap: 10px;
+    padding: 8px;
+  }
+  main.main .post-entry .entry-cover { height: 75px; }
+  main.main .post-entry .entry-header h2 { font-size: 0.92rem; }
+  main.main .post-entry .entry-content { -webkit-line-clamp: 1; font-size: 0.78rem; }
+}
