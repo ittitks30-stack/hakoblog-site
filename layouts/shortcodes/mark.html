@@ -1,0 +1,8 @@
+{{- /*
+  蛍光ペン風マーカー（リベラルアーツ大学風）
+  使い方: {{< mark >}}重要キーワード{{< /mark >}}
+  色指定: {{< mark color="pink" >}}強調{{< /mark >}}
+  色オプション: yellow（既定）/ pink / blue / green
+*/ -}}
+{{- $color := .Get "color" | default "yellow" -}}
+<span class="hl-mark hl-mark-{{ $color }}">{{ .Inner | markdownify }}</span>

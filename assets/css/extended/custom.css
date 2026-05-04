@@ -578,3 +578,41 @@ main.main .post-entry .entry-footer {
   main.main .post-entry .entry-header h2 { font-size: 0.92rem; }
   main.main .post-entry .entry-content { -webkit-line-clamp: 1; font-size: 0.78rem; }
 }
+
+/* =========================================
+   PR表記（記事冒頭）
+   ========================================= */
+.pr-notice {
+  font-size: 0.78rem;
+  color: #888;
+  background: #fafafa;
+  border: 1px solid #eee;
+  padding: 6px 12px;
+  border-radius: 4px;
+  margin: 12px 0 20px;
+  line-height: 1.5;
+}
+.pr-notice__label {
+  display: inline-block;
+  background: #999;
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+/* =========================================
+   蛍光ペン風マーカー shortcode
+   ========================================= */
+.hl-mark {
+  background: linear-gradient(transparent 60%, #fff176 60%);
+  padding: 0 1px;
+  font-weight: 700;
+}
+.hl-mark-yellow { background: linear-gradient(transparent 60%, #fff176 60%); }
+.hl-mark-pink   { background: linear-gradient(transparent 60%, #f8bbd0 60%); }
+.hl-mark-blue   { background: linear-gradient(transparent 60%, #b3e5fc 60%); }
+.hl-mark-green  { background: linear-gradient(transparent 60%, #c8e6c9 60%); }
