@@ -58,6 +58,33 @@
     {{- if (.Param "ShowPostNavLinks") }}
     {{- partial "post_nav_links.html" . }}
     {{- end }}
+
+    {{/* 関連記事セクション（内部リンク強化・SEO） */}}
+    {{- $current := . }}
+    {{- $categories := .Params.categories }}
+    {{- $related := where (where .Site.RegularPages "Type" "posts") "Permalink" "ne" .Permalink }}
+    {{- if $categories }}
+    {{- $related = where $related "Params.categories" "intersect" $categories }}
+    {{- end }}
+    {{- $related = first 6 $related }}
+    {{- if gt (len $related) 0 }}
+    <section class="related-posts" style="margin-top:48px;padding-top:32px;border-top:2px solid #e5e5e5">
+      <h2 style="font-size:1.4rem;margin-bottom:20px">関連記事</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px">
+        {{- range $related }}
+        <a href="{{ .Permalink }}" style="display:block;padding:16px;border:1px solid #e5e5e5;border-radius:8px;text-decoration:none;color:inherit;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'" onmouseout="this.style.boxShadow='none'">
+          {{- with .Params.cover.image }}
+          <img src="{{ . | relURL }}" alt="" loading="lazy" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:4px;margin-bottom:8px">
+          {{- end }}
+          <div style="font-size:0.95rem;font-weight:600;line-height:1.4">{{ .Title }}</div>
+          {{- with .Description }}
+          <div style="font-size:0.8rem;color:#666;margin-top:6px;line-height:1.4">{{ . | truncate 60 }}</div>
+          {{- end }}
+        </a>
+        {{- end }}
+      </div>
+    </section>
+    {{- end }}
     {{- if (and site.Params.ShowShareButtons (ne .Params.disableShare true)) }}
     {{- partial "share_icons.html" . -}}
     {{- end }}

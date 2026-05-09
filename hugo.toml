@@ -6,7 +6,8 @@ hasCJKLanguage = true
 enableRobotsTXT = true
 buildDrafts = false
 buildFuture = true
-paginate = 10
+[pagination]
+  pagerSize = 100
 
 [params]
   description = "転職エージェント徹底比較・活用ガイド"
