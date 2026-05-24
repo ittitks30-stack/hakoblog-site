@@ -19,7 +19,7 @@ categories:
 
 {{< agent-card name="リクルートエージェント" short="RA" rating="4.8" badge="編集部イチオシ"
     tag="求人数No.1" jobs="約60万件"
-    url="https://example.com/recruit"
+    url="https://t.afi-b.com/visit.php?a=968723-R229373H&p=X979052c"
     points="非公開求人が全体の約80%|各業界に精通した専任アドバイザー|全国47都道府県・海外対応"
     body="転職初心者〜経験者まで幅広くおすすめ。求人数の多さで選ぶならここ一択。" >}}
 
@@ -75,7 +75,7 @@ categories:
     title="気になったエージェントに、今すぐ無料登録"
     sub="登録は5分・完全無料・あなたのキャリアを一歩前へ"
     main-label="リクルートエージェントに無料登録"
-    main-url="https://example.com/recruit"
+    main-url="https://t.afi-b.com/visit.php?a=968723-R229373H&p=X979052c"
     sub-label="dodaで求人を見る"
     sub-url="https://doda.jp/"
     badges="完全無料|登録5分|非公開求人あり|24時間対応" >}}
@@ -92,7 +92,7 @@ categories:
     title="まずは1社だけ無料相談してみる"
     sub="所要時間5分、登録後すぐ面談予約が可能です"
     main-label="無料で相談する"
-    main-url="https://example.com/recruit" >}}{{< /cta-block >}}
+    main-url="https://t.afi-b.com/visit.php?a=968723-R229373H&p=X979052c" >}}{{< /cta-block >}}
 
 ---
 
