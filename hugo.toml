@@ -11,7 +11,7 @@ buildFuture = true
 
 [params]
   description = "転職エージェント徹底比較・活用ガイド"
-  author = "テンショク・ラボ編集部"
+  author = "運営者 itti"
   defaultTheme = "light"
   ShowReadingTime = true
   ShowShareButtons = false
@@ -19,7 +19,8 @@ buildFuture = true
   ShowBreadCrumbs = true
   ShowCodeCopyButtons = true
   ShowToc = true
-  TocOpen = false
+  DateFormat = "2006年1月2日"
+  TocOpen = true
 
 [params.footer]
   text = "当サイトはアフィリエイトプログラムにより収益を得ています。"

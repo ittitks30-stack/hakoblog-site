@@ -17,7 +17,7 @@ categories:
 
 <div class="agent-card-grid">
 
-{{< agent-card name="リクルートエージェント" short="RA" rating="4.8" badge="編集部イチオシ"
+{{< agent-card name="リクルートエージェント" short="RA" rating="4.8" badge="運営者イチオシ"
     tag="求人数No.1" jobs="約60万件"
     url="https://t.afi-b.com/visit.php?a=968723-R229373H&p=X979052c"
     points="非公開求人が全体の約80%|各業界に精通した専任アドバイザー|全国47都道府県・海外対応"
