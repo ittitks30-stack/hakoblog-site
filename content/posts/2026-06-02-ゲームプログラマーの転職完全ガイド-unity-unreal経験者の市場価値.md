@@ -207,7 +207,7 @@ Unreal Engineのゲーム外需要が5つの業界に広がっているのがわ
 
 {{< agent-card name="G-JOBエージェント" short="GJ" rating="4.7" badge="ゲーム特化No.1"
     tag="ゲームクリエイター専門" jobs="非公開求人多数"
-    url="https://example.com/g-job-agent"
+    url="https://game-matching.jp/"
     points="ゲーム・エンタメ業界に特化したマッチング|非公開求人へのアクセスが強み|業界の内情・採用基準に詳しいコンサルタント"
     body="ゲーム業界内での転職を軸に考えるなら最優先で登録したいエージェント。" >}}
 
@@ -219,7 +219,7 @@ Unreal Engineのゲーム外需要が5つの業界に広がっているのがわ
 
 {{< agent-card name="レバテックキャリア" short="LT" rating="4.6" badge="IT特化大手"
     tag="高年収IT求人" jobs="ゲームプログラマー求人371件（2026年5月）"
-    url="https://example.com/levtech"
+    url="https://career.levtech.jp/"
     points="ITエンジニア特化の大手で求人数が豊富|ゲームプログラマー平均657万円のデータ保有|年収交渉サポートが手厚い"
     body="年収アップを最優先に考えるエンジニア向け。大手エージェントならではの交渉力が魅力。" >}}
 
@@ -235,7 +235,7 @@ Unreal Engineのゲーム外需要が5つの業界に広がっているのがわ
 {{< cta-block compact="true"
     title="まずは1社だけ相談してみる"
     sub="登録5分・完全無料・強引な勧誘なし"
-    main-label="G-JOBエージェントに無料相談" main-url="https://example.com/g-job-agent" >}}{{< /cta-block >}}
+    main-label="G-JOBエージェントに無料相談" main-url="https://game-matching.jp/" >}}{{< /cta-block >}}
 
 <div style="margin:24px 0;padding:20px;background:#f8f9fa;border-radius:12px"><svg viewBox="0 0 900 285" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:900px;display:block;margin:0 auto;font-family:'Hiragino Sans','Yu Gothic',sans-serif"><defs><marker id="arrowC" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#333"/></marker></defs><text x="450" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#222">ゲームプログラマー転職ロードマップ</text><circle cx="90" cy="108" r="30" fill="#1a5276"/><text x="90" y="118" text-anchor="middle" font-size="26" font-weight="bold" fill="#fff">1</text><rect x="20" y="150" width="140" height="120" fill="#e8f4f8" stroke="#1a5276" stroke-width="2" rx="6"/><text x="90" y="178" text-anchor="middle" font-size="16" font-weight="bold" fill="#1a5276">棚卸し</text><text x="90" y="200" text-anchor="middle" font-size="13" fill="#1a5276">スキル整理</text><text x="90" y="220" text-anchor="middle" font-size="13" fill="#1a5276">自己分析</text><text x="90" y="248" text-anchor="middle" font-size="13" fill="#1a5276">（1〜2週間）</text><path d="M 125 108 L 235 108" stroke="#333" stroke-width="3" marker-end="url(#arrowC)"/><circle cx="270" cy="108" r="30" fill="#1a5276"/><text x="270" y="118" text-anchor="middle" font-size="26" font-weight="bold" fill="#fff">2</text><rect x="200" y="150" width="140" height="120" fill="#e8f4f8" stroke="#1a5276" stroke-width="2" rx="6"/><text x="270" y="178" text-anchor="middle" font-size="16" font-weight="bold" fill="#1a5276">PF作成</text><text x="270" y="200" text-anchor="middle" font-size="13" fill="#1a5276">GitHub整備</text><text x="270" y="220" text-anchor="middle" font-size="13" fill="#1a5276">デモ動画制作</text><text x="270" y="248" text-anchor="middle" font-size="13" fill="#1a5276">（2〜4週間）</text><path d="M 305 108 L 415 108" stroke="#333" stroke-width="3" marker-end="url(#arrowC)"/><circle cx="450" cy="108" r="30" fill="#1a5276"/><text x="450" y="118" text-anchor="middle" font-size="26" font-weight="bold" fill="#fff">3</text><rect x="380" y="150" width="140" height="120" fill="#e8f4f8" stroke="#1a5276" stroke-width="2" rx="6"/><text x="450" y="178" text-anchor="middle" font-size="16" font-weight="bold" fill="#1a5276">登録・面談</text><text x="450" y="200" text-anchor="middle" font-size="13" fill="#1a5276">キャリア相談</text><text x="450" y="220" text-anchor="middle" font-size="13" fill="#1a5276">求人選定</text><text x="450" y="248" text-anchor="middle" font-size="13" fill="#1a5276">（1〜2週間）</text><path d="M 485 108 L 595 108" stroke="#333" stroke-width="3" marker-end="url(#arrowC)"/><circle cx="630" cy="108" r="30" fill="#1a5276"/><text x="630" y="118" text-anchor="middle" font-size="26" font-weight="bold" fill="#fff">4</text><rect x="560" y="150" width="140" height="120" fill="#e8f4f8" stroke="#1a5276" stroke-width="2" rx="6"/><text x="630" y="178" text-anchor="middle" font-size="16" font-weight="bold" fill="#1a5276">選考・面接</text><text x="630" y="200" text-anchor="middle" font-size="13" fill="#1a5276">技術面接</text><text x="630" y="220" text-anchor="middle" font-size="13" fill="#1a5276">コーディング</text><text x="630" y="248" text-anchor="middle" font-size="13" fill="#1a5276">（2〜8週間）</text><path d="M 665 108 L 775 108" stroke="#333" stroke-width="3" marker-end="url(#arrowC)"/><circle cx="810" cy="108" r="30" fill="#155724"/><text x="810" y="118" text-anchor="middle" font-size="26" font-weight="bold" fill="#fff">5</text><rect x="740" y="150" width="140" height="120" fill="#d4edda" stroke="#155724" stroke-width="2" rx="6"/><text x="810" y="178" text-anchor="middle" font-size="16" font-weight="bold" fill="#155724">内定・入社</text><text x="810" y="200" text-anchor="middle" font-size="13" fill="#155724">年収交渉</text><text x="810" y="220" text-anchor="middle" font-size="13" fill="#155724">転職完了</text><text x="810" y="248" text-anchor="middle" font-size="13" fill="#155724">（目安3ヶ月）</text></svg></div>
 
@@ -321,7 +321,7 @@ Unity・Unrealそれぞれの強みと活躍フィールドを整理しました
 {{< cta-block
     title="気になったエージェントに、今すぐ無料登録"
     sub="登録5分・完全無料・ゲームプログラマーの転職をサポート"
-    main-label="G-JOBエージェントに無料登録" main-url="https://example.com/g-job-agent"
+    main-label="G-JOBエージェントに無料登録" main-url="https://game-matching.jp/"
     sub-label="Geeklyで求人を見る" sub-url="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3768702&pid=892603298"
     badges="完全無料|登録5分|非公開求人あり|ゲーム特化" >}}
 迷ったらまずゲーム特化型と総合型の2社に登録するのがおすすめ。
