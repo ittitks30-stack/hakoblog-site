@@ -37,7 +37,7 @@ categories:
 
 {{< agent-card name="type転職エージェント" short="ty" rating="4.2"
     tag="関東×IT系" jobs="約2万件"
-    url="https://example.com/type"
+    url="https://type.jp/"
     points="関東エリア×IT・営業職に強い|年収交渉力に定評|30代のキャリアアップ支援実績"
     body="首都圏で年収アップを狙う30代におすすめ。" >}}
 
