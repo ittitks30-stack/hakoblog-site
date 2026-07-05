@@ -128,15 +128,27 @@
       </ul>
     </div>
 
-    <!-- ▼ 人気記事（暫定で最近の人気順） -->
+    <!-- ▼ 人気記事（GA4直近28日の実PVデータ連動・不足分は新着で補完） -->
     <div class="widget">
       <h3 class="widget-title">🔥 よく読まれている記事</h3>
       <ol class="widget-pop-list">
-        {{ $popular := where site.RegularPages "Type" "posts" }}
-        {{ range first 5 $popular }}
-        <li>
-          <a href="{{ .Permalink }}">{{ .Title }}</a>
-        </li>
+        {{ $posts := where site.RegularPages "Type" "posts" }}
+        {{ $shown := slice }}
+        {{ with site.Data.popular }}
+          {{ range $stem := .stems }}
+            {{ range $posts }}
+              {{ if and (eq .File.ContentBaseName $stem) (lt (len $shown) 5) }}
+        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+                {{ $shown = $shown | append .File.ContentBaseName }}
+              {{ end }}
+            {{ end }}
+          {{ end }}
+        {{ end }}
+        {{ range $posts }}
+          {{ if and (lt (len $shown) 5) (not (in $shown .File.ContentBaseName)) }}
+        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+            {{ $shown = $shown | append .File.ContentBaseName }}
+          {{ end }}
         {{ end }}
       </ol>
     </div>
