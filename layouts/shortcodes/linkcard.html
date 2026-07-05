@@ -1,0 +1,31 @@
+{{- /* 内部リンクのブログカード。使い方: {{< linkcard "/posts/2026-04-13-スラグ/" >}}
+     タイトル・説明文・アイキャッチはリンク先記事から自動取得（手書き不要） */ -}}
+{{- $raw := .Get 0 -}}
+{{- $path := $raw | strings.TrimSuffix "/" -}}
+{{- $page := site.GetPage $path -}}
+{{- if not $page -}}
+  {{- /* Unicode正規化差(NFC/NFD)でGetPageが外れた場合のフォールバック: ファイル名で探索 */ -}}
+  {{- $stem := path.Base $path -}}
+  {{- range where site.RegularPages "Type" "posts" -}}
+    {{- if eq .File.ContentBaseName $stem -}}{{- $page = . -}}{{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- with $page -}}
+<a class="linkcard" href="{{ .Permalink }}">
+  {{- with .Params.cover -}}
+  <span class="linkcard-thumb" style="background-image:url('{{ .image }}')"></span>
+  {{- else -}}
+  <span class="linkcard-thumb linkcard-thumb-default">📝</span>
+  {{- end -}}
+  <span class="linkcard-body">
+    <span class="linkcard-label">関連記事</span>
+    <span class="linkcard-title">{{ .Title }}</span>
+    {{- with .Params.description -}}
+    <span class="linkcard-desc">{{ . | truncate 75 }}</span>
+    {{- end -}}
+  </span>
+</a>
+{{- else -}}
+{{- warnf "linkcard: 記事が見つかりません %q" $raw -}}
+<a href="{{ $raw }}">{{ $raw }}</a>
+{{- end -}}
