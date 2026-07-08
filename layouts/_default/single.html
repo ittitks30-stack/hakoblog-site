@@ -48,6 +48,30 @@
   </div>
   {{- end }}
 
+  {{- if eq .Type "posts" }}
+  {{/* 著者ボックス（E-E-A-T・全記事共通） */}}
+  <aside class="author-box" style="display:flex;gap:16px;align-items:flex-start;margin-top:48px;padding:20px;background:#f8f9fa;border:1px solid #e2e2e2;border-radius:12px">
+    <img src="/images/chars/itti_anime.png" alt="運営者itti" width="72" height="72" style="border-radius:50%;object-fit:cover;flex-shrink:0">
+    <div>
+      <div style="font-size:0.78rem;color:#888;margin-bottom:2px">この記事を書いた人</div>
+      <div style="font-weight:700;font-size:1.05rem;margin-bottom:6px">itti（テンショク・ラボ運営者）</div>
+      <p style="margin:0 0 8px;font-size:0.88rem;line-height:1.6;color:#444">機械加工の現場で働く40代。転職エージェントを利用して複数社から内定を得た実体験をもとに、選び方・使い方をデータと合わせて解説しています。</p>
+      <a href="/about/" style="font-size:0.85rem">運営者情報を見る →</a>
+    </div>
+  </aside>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "itti",
+    "url": "{{ "about/" | absURL }}",
+    "image": "{{ "images/chars/itti_anime.png" | absURL }}",
+    "description": "テンショク・ラボ運営者。機械加工の現場で働く40代。転職エージェントを利用して複数社から内定を得た経験をもとに転職情報を発信。",
+    "worksFor": { "@type": "Organization", "name": "テンショク・ラボ" }
+  }
+  </script>
+  {{- end }}
+
   <footer class="post-footer">
     {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
     <ul class="post-tags">
