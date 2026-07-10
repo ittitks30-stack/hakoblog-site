@@ -17,6 +17,26 @@
 <!-- ========================================== -->
 <section class="cat-section">
   <h2 class="section-title">あなたに合った記事を探す</h2>
+
+  <div class="feature-grid">
+    <a class="feature-card feature-beginner" href="/posts/2026-06-25-転職初心者がやるべきこと7つ-何から始めるか迷ったら/">
+      <span class="feature-emoji">🔰</span>
+      <span class="feature-body">
+        <span class="feature-name">はじめての転職の方へ</span>
+        <span class="feature-desc">何から始めるか、正しい順番で解説します</span>
+      </span>
+      <span class="feature-arrow">→</span>
+    </a>
+    <a class="feature-card feature-ranking" href="/posts/2026-03-29-2025年最新-転職エージェントおすすめランキング10選-実際に使って比較してみた/">
+      <span class="feature-emoji">🏆</span>
+      <span class="feature-body">
+        <span class="feature-name">迷ったらこれ</span>
+        <span class="feature-desc">おすすめ転職エージェントランキング10選</span>
+      </span>
+      <span class="feature-arrow">→</span>
+    </a>
+  </div>
+
   <div class="cat-grid">
     <a class="cat-card cat-20" href="/categories/20代/">
       <span class="cat-emoji">🌱</span>
@@ -166,6 +186,46 @@
 </div>
 
 <style>
+  /* ======== 特別カード（初心者向け・おすすめ） ======== */
+  .feature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+  .feature-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 22px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #222;
+    border: 2px solid transparent;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    transition: transform .2s, box-shadow .2s;
+  }
+  .feature-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  }
+  .feature-beginner {
+    background: linear-gradient(135deg, #e8f4f8, #ddefe4);
+    border-color: #b8d4e3;
+  }
+  .feature-ranking {
+    background: linear-gradient(135deg, #fef9e7, #fdf0d5);
+    border-color: #f9e79f;
+  }
+  .feature-emoji { font-size: 2rem; flex-shrink: 0; }
+  .feature-body { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+  .feature-name { font-weight: 800; font-size: 1.12rem; }
+  .feature-desc { font-size: 0.86rem; color: #555; }
+  .feature-arrow { margin-left: auto; font-weight: 700; color: #888; font-size: 1.2rem; }
+  @media (max-width: 700px) {
+    .feature-grid { grid-template-columns: 1fr; }
+  }
+
   /* ======== ヒーロー ======== */
   .hero {
     position: relative;
