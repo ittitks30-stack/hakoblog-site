@@ -225,7 +225,7 @@ Unreal Engineのゲーム外需要が5つの業界に広がっているのがわ
     body="年収アップを最優先に考えるエンジニア向け。大手エージェントならではの交渉力が魅力。" >}}
 
 {{< agent-card name="マイナビクリエイター" short="MC" rating="4.4" tag="クリエイター特化"
-    url="https://mynavi-agent.jp/-creator"
+    url="https://mynavi-creator.jp/"
     points="ゲーム・映像・Web業界出身のアドバイザー在籍|ポートフォリオ作成サポートあり|クリエイター系異業種への転身に強い"
     body="ポートフォリオの作り方から丁寧にサポートしてもらいたい方に向いている。" >}}
 
