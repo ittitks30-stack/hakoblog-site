@@ -9,7 +9,6 @@ cover:
   relative: false
 categories:
   - 転職エージェント
-  - 40代
   - 女性
   - ハイクラス
 ---
